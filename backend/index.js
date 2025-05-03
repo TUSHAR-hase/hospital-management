@@ -14,7 +14,7 @@ import appoinment from "./routes/appoinment.js";
 import { Certificate } from './schemas/certificate.js';
 dotenv.config();
 const corseconfig = { origin: "*" ,
-methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+methods: ["GET", "POST", "PUT", "DELETE"],
 credentials: true
 };
 const app = express();
