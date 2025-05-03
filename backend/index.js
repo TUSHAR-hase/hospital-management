@@ -19,7 +19,7 @@ credentials: true
 };
 const app = express();
 const port = process.env.PORT || 3000;
-
+app.options('*', corseconfig);
 mongoose.set("strictQuery", false);
 
 // MongoDB connection
