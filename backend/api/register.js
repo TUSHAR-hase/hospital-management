@@ -5,7 +5,7 @@ import nodemailer from "nodemailer";
 
 import jwt from 'jsonwebtoken';
 import express from 'express';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import User from '../schemas/registerschema.js'; 
 
 const router = express.Router();
