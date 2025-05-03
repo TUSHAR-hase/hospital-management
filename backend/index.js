@@ -13,7 +13,10 @@ import Reviewauth from './routes/review.js';
 import appoinment from "./routes/appoinment.js";
 import { Certificate } from './schemas/certificate.js';
 dotenv.config();
-
+const corseconfig = { origin: "*" ,
+methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+credentials: true
+};
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -36,7 +39,7 @@ const connectDB = async () => {
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
-app.use(cors());
+app.use(cors(corseconfig));
 app.use(cookieParser());
 app.use(express.json());
 
