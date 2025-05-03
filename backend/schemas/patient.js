@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 const patientSchema = new mongoose.Schema({
   role: { type: String, required: true, enum: ['patient', 'doctor', 'receptionist'], default: 'patient' },
