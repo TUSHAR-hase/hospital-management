@@ -23,7 +23,10 @@ import CertificateGenerator from '../pages/cirtaficate'
 
 const Routerss = () => {
   return <Routes>
+
     <Route path="/home/:id" element={<Home />} />
+    <Route path="/" element={<Home />} />
+
    <Route path='/profile/:id' element={ <ProfilePage/>}/>
     <Route path="/contect" element={<Contect/>} />
     <Route path="/doctordeshboard/:id" element={<DoctorDashboard/>} />
