@@ -35,7 +35,14 @@ const userid=localStorage.getItem("userid")
         setLoading(false);
       });
   }, []);
-
+  useEffect(()=>{
+       const userid=localStorage.getItem("userid")
+       if(!userid){
+        navigate("/login")
+       }else{
+        navigate(`/home/${userid}`)
+       }
+     },[])
   // Handle form input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

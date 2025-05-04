@@ -19,14 +19,14 @@ const Home = () => {
   const scrollLeft = () => {
     scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
   };
- useEffect(()=>{
-   const userid=localStorage.getItem("userid")
-   if(!userid){
-    nevigate("/login")
-   }else{
-    nevigate(`/home/${userid}`)
-   }
- },[])
+//  useEffect(()=>{
+//    const userid=localStorage.getItem("userid")
+//    if(!userid){
+//     nevigate("/login")
+//    }else{
+//     nevigate(`/home/${userid}`)
+//    }
+//  },[])
   useEffect(() => {
       fetch(`${BASE_URL}/api/v1/doctors/alldoctor`)
         .then(response => response.json())
