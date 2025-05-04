@@ -43,6 +43,9 @@ console.log(data)
                  
                     navigate('/login');
                 }
+                if(data.message==="User already verified") {
+                    navigate('/login');
+                }
                 alert(data.message);
             } catch (error) {
                 console.error('Error occurred:', error.response || error);
@@ -61,6 +64,7 @@ console.log(data)
                 <div className="flex justify-center gap-2 mb-4">
                     {otp.map((digit, index) => (
                         <input
+                        type='number'
                             key={index}
                             id={`otp-input-${index}`}
                             value={digit}
