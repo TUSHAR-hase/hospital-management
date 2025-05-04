@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { KeyRound } from 'lucide-react';
@@ -8,7 +8,7 @@ import { BASE_URL } from '../../config';
 const OtpPage = () => {
     const { email } = useParams();
     const [otp, setOtp] = useState(['', '', '', '']);
-
+const navigate=useNavigate
     const handleChange = (e, index) => {
         const value = e.target.value;
         if (/[^0-9]/.test(value)) return; // Allow only numeric input
@@ -41,7 +41,7 @@ const OtpPage = () => {
 console.log(data)
                 if (data.message==="User verified successfully") {
                  
-                    window.location.href = "http://localhost:5173/login";
+                    navigate('/login');
                 }
                 alert(data.message);
             } catch (error) {

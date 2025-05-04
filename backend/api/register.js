@@ -21,8 +21,8 @@ export const register = async (req, resp) => {
   const smtpPass = process.env.SMTP_PASSWORD;
         const { email, password, name, role, gender, image, contact,address} = req.body;
         console.log('Request data:', req.body);
-  const otp = Math.floor(Math.random() * 10000);
-
+//   const otp = Math.floor(Math.random() * 10000);
+const otp = Math.floor(1000 + Math.random() * 9000);
 
         let existingUser = await Patient.findOne({ email })
         if (existingUser) {
