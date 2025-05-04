@@ -187,8 +187,7 @@ export const login = async (req, res) => {
         const otp = Math.floor(Math.random() * 10000);
   
         let user =  
-        await Doctor.findOne({ email }) ||
-        await Patient.findOne({email})||
+        await Patient.findOne({email})|| await Doctor.findOne({ email }) ||
        
          await receptionist.findOne({ email });
                   
