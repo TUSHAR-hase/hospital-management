@@ -39,8 +39,6 @@ const userid=localStorage.getItem("userid")
        const userid=localStorage.getItem("userid")
        if(!userid){
         navigate("/login")
-       }else{
-        navigate(`/home/${userid}`)
        }
      },[])
   // Handle form input changes
