@@ -9,9 +9,9 @@ const uplodecloudnery=async (file)=>{
         
       const uplodedata=new FormData();
       uplodedata.append('file',file);
-      uplodedata.append('upload_preset',"hospital_user");
+      uplodedata.append('upload_preset',vita_uplode_preset);
 
-      uplodedata.append('cloud_name',"dczul1z4n");
+      uplodedata.append('cloud_name',uplode_url);
       const responce=await fetch(`https://api.cloudinary.com/v1_1/dczul1z4n/image/upload`,{
             method:'POST',
             body:uplodedata
