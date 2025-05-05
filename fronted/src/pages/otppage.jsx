@@ -40,10 +40,11 @@ const navigate=useNavigate
                 const data=await response.json();
 console.log(data)
                 if (data.message==="User verified successfully") {
-                 
+                 alert("User verified successfully")
                     navigate('/login');
                 }
                 if(data.message==="User already verified") {
+                    alert("Your OTP Already Verified")
                     navigate('/login');
                 }
                 alert(data.message);
