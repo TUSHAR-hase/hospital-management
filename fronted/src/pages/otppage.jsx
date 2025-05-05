@@ -8,7 +8,7 @@ import { BASE_URL } from '../../config';
 const OtpPage = () => {
     const { email } = useParams();
     const [otp, setOtp] = useState(['', '', '', '']);
-const navigate=useNavigate
+const navigate=useNavigate()
     const handleChange = (e, index) => {
         const value = e.target.value;
         if (/[^0-9]/.test(value)) return; // Allow only numeric input
