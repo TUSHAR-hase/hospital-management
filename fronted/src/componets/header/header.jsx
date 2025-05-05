@@ -151,7 +151,7 @@ const Headers = () => {
             >
               <img
                 src={profileimg}
-                className="h-12 w-12 rounded-full object-cover border-2 border-blue-200 transition-all duration-300 group-hover:border-blue-400 group-hover:scale-105"
+                className="h-14 w-14 rounded-full object-cover border-2 border-blue-200 transition-all duration-300 group-hover:border-blue-400 group-hover:scale-105"
                 alt="Profile"
               />
             </button>
