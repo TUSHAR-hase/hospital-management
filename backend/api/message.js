@@ -1,6 +1,6 @@
 import express from 'express';
 import nodemailer from 'nodemailer';
-import { mailservice } from '../schema/mail.js';
+import { mailservice } from '../schemas/mail.js';
 
 const router = express.Router();
 const smtpUser = process.env.SMTP_USER;
