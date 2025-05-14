@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import multer from 'multer';
+import mailmessage from './routes/messages.js';
 import routeauth from './routes/auth.js';
 import doctorroute from './routes/doctor.js';
 import user from './routes/user.js';
@@ -48,7 +49,7 @@ app.use("/api/v1/users", user);
 app.use("/api/v1/appoinment", appoinment);
 app.use("/api/v1/reception", Receptionroute);
 app.use("/api/v1/review", Reviewauth);
-
+app.use('/api/messages', mailmessage);
 
 app.post('/api/v1/upload-certificate/:id', upload.single('certificate'), async (req, res) => {
   try {
