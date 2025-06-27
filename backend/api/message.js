@@ -14,7 +14,7 @@ export const sendmail = async (req, res) => {
         service: "gmail", // You can also use SMTP server details directly
         auth: {
             user: "thakorrajta859@gmail.com", // your email address
-            pass: "kjur wrwn esfr vevn", // your email password (use app-specific password for Gmail)
+            pass: "dbze hkib tivz mbjy", // your email password (use app-specific password for Gmail)
         },
     });
     if (!name || !email || !subject || !message) {

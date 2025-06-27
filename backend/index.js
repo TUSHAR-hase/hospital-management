@@ -98,6 +98,7 @@ app.get('/api/v1/certificate/:id', async (req, res) => {
 
 app.listen(port, () => {
   connectDB();
+  console.log(port);
   console.log(`Server is running on port ${port}`);
 });
 
