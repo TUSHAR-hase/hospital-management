@@ -1,6 +1,6 @@
 import express from 'express';
 import nodemailer from 'nodemailer';
-import { mailservicerohit } from '../schemas/rohitmail.js  ';
+import { mailservicerohit } from '../schemas/rohitmail.js';
 
 const router = express.Router();
 
