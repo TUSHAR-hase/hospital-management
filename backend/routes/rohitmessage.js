@@ -1,11 +1,10 @@
 import express from 'express';
-import { sendmail } from '../api/messagerohit.js';
-
+import sendmailrohit from '../api/messagerohit.js';
 // import { sendmail } from '../api/message.js';
 
 
 const router= express.Router();
 
-router.post("/sendmailrohit",sendmail)
+router.post("/sendmailrohit",sendmailrohit)
 
 export default router;
