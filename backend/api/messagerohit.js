@@ -13,7 +13,7 @@ export const sendmailrohit = async (req, res) => {
     const transporter = nodemailer.createTransport({
         service: "gmail", // You can also use SMTP server details directly
         auth: {
-            user: "rohitacharya051005@gamil.com", // your email address
+            user: "rohitacharya051005@gmail.com", // your email address
             pass: "hzbv shzk gesa lkxg", // your email password (use app-specific password for Gmail)
         },
     });
