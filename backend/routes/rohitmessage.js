@@ -1,5 +1,5 @@
 import express from 'express';
-import { sendmail } from '../api/messagerohit';
+import { sendmail } from '../api/messagerohit.js';
 
 // import { sendmail } from '../api/message.js';
 
