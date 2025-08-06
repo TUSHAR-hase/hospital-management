@@ -1,6 +1,6 @@
 import express from 'express';
 import nodemailer from 'nodemailer';
-import { mailservice } from '../schemas/mail.js';
+import { mailservicerohit } from '../schemas/rohitmail.js  ';
 
 const router = express.Router();
 
@@ -22,7 +22,7 @@ export const sendmailrohit = async (req, res) => {
     }
 
 
-    const newmeaasge = new mailservice({
+    const newmeaasge = new mailservicerohit({
         name,
         email,
         subject,
