@@ -1,10 +1,9 @@
+// ✅ rohitmessage.js
 import express from 'express';
-import sendmailrohit from '../api/messagerohit.js';
+import { sendmailrohit } from '../api/messagerohit.js'; // Use named import
 
+const router = express.Router();
 
-
-const router= express.Router();
-
-router.post("/sendmailrohit",sendmailrohit)
+router.post("/sendmailrohit", sendmailrohit);
 
 export default router;
