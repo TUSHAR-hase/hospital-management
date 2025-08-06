@@ -13,8 +13,8 @@ export const sendmail = async (req, res) => {
     const transporter = nodemailer.createTransport({
         service: "gmail", // You can also use SMTP server details directly
         auth: {
-            user: "thakorrajta859@gmail.com", // your email address
-            pass: "dbze hkib tivz mbjy", // your email password (use app-specific password for Gmail)
+            user: "rohitacharya051005@gmail.com", // your email address
+            pass: "btwu rozs pftf rqid", // your email password (use app-specific password for Gmail)
         },
     });
     if (!name || !email || !subject || !message) {
@@ -32,7 +32,7 @@ export const sendmail = async (req, res) => {
 
     const mailOptions = {
         from: email,
-        to:"thakorrajta859@gmail.com",
+        to:"rohitacharya051005@gmail.com",
         subject: `[Contact] ${subject} from ${name}`,
         text: `
       Name: ${name}
