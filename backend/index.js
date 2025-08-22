@@ -7,6 +7,7 @@ import multer from 'multer';
 import mailmessage from './routes/messages.js';
 import mailmessagerohit from './routes/rohitmessage.js';  
 import routeauth from './routes/auth.js';
+import postinternship from './routes/application.js'
 import doctorroute from './routes/doctor.js';
 import user from './routes/user.js';
 import Receptionroute from './routes/receptions.js';
@@ -44,6 +45,7 @@ app.use(express.json());
 
 // Existing routes
 app.use("/api/v1/auth", routeauth);
+app.use("/api/v1/internship", postinternship);
 app.use("/api/v1/contectmessage", ContactMessage);
 app.use("/api/v1/doctors", doctorroute);
 app.use("/api/v1/users", user);
