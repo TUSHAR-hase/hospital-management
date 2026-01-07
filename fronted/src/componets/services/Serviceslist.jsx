@@ -30,7 +30,7 @@ const ServicesList = () => {
                 }}
               >
                 <h3 className="text-xl font-bold mb-4 text-gray-800">{item.name}</h3>
-                <p className="text-gray-600 mb-6">{item.desc}</p>
+                <p className="text-gray-600 mb-4">{item.desc}</p>
                 {/* Arrow Button */}
                 <button
                   className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-gray-800 p-4 rounded-full shadow-lg hover:bg-gray-100 transition"

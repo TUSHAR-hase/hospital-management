@@ -6,8 +6,8 @@ const About = () => {
     <h2 className="text-3xl font-extrabold text-gray-800 text-center tracking-wide md:text-4xl lg:text-5xl transition-all duration-500 ease-in-out hover:text-blue-600">
       About Our Hospital
     </h2>
-    <p className="text-gray-600 text-center mt-4 text-lg md:text-xl lg:text-2xl leading-relaxed">
-      Welcome to [Hospital Name], where we prioritize your health and well-being. With decades of experience, we are committed to providing compassionate care and state-of-the-art medical services.
+    <p className="text-gray-600 text-center mt-4 text-md  leading-relaxed">
+      Welcome to Hospital , where we prioritize your health and well-being. With decades of experience, we are committed to providing compassionate care and state-of-the-art medical services.
     </p>
     <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
       {/* Left: Image */}
@@ -24,17 +24,17 @@ const About = () => {
         <h3 className="text-2xl font-semibold text-gray-800 mt-8 tracking-tight md:text-3xl lg:text-4xl text-left transition-all duration-500 ease-in-out hover:text-blue-600">
           Our Mission
         </h3>
-        <p className="text-gray-600 mt-4 text-lg leading-relaxed md:text-xl">
+        <p className="text-gray-600 mt-4 text-md leading-relaxed ">
           At [Hospital Name], our mission is to deliver high-quality healthcare services while ensuring that every patient receives personalized, compassionate care. We strive to meet the medical needs of our community with cutting-edge technology and skilled medical professionals.
         </p>
-        <p className="text-gray-600 mt-4 text-lg leading-relaxed md:text-xl">
+        <p className="text-gray-600 mt-4 text-md leading-relaxed ">
           Our team of doctors, nurses, and support staff work collaboratively to create a safe, healing environment for all our patients. We are committed to not only treating illnesses but also improving the overall well-being of every individual who walks through our doors.
         </p>
         
         <h3 className="text-2xl font-semibold text-gray-800 mt-8 tracking-tight md:text-3xl lg:text-4xl text-left transition-all duration-500 ease-in-out hover:text-blue-600">
           Why Choose Us?
         </h3>
-        <p className="text-gray-600 mt-4 text-lg leading-relaxed md:text-xl">
+        <p className="text-gray-600 mt-4 text-md leading-relaxed ">
           - Advanced medical technology for accurate diagnoses and effective treatments.<br />
           - A team of experienced and dedicated healthcare professionals.<br />
           - Comprehensive care across various specialties including [List Key Specialties like cardiology, neurology, orthopedics, etc.].<br />

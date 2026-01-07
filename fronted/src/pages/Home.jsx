@@ -67,7 +67,7 @@ const Home = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-white text-gray-800 leading-tight">
             Simplify Hospital Management and Enhance Patient Care
             </h1>
-            <p className="mt-4  text-white text-lg">
+            <p className="mt-4  text-white text-md">
             Our hospital management system helps you efficiently manage patient records, doctor schedules, billing, and more all in one platform. Focus on providing exceptional care while we streamline your operations.
             </p>
             <div className="mt-6">

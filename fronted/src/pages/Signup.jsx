@@ -20,80 +20,86 @@ const Register = ({ onSwitchToLogin }) => {
   const [image, setImage] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [formData, setFormData] = useState({});
+  const [isUploading, setIsUploading] = useState(false);
+const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [contact, setcontact] = useState('');
   const [address, setAddress] = useState('');
   const nevigate=useNavigate()
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = async(e) => {
-    e.preventDefault();
-    if (!name || !email || !password || !selectedFile) {
-      alert('Please fill out all fields and upload an image.');
-    } else {
-      alert('Registered successfully!');
-      console.log(formData);
-    }
+  if (!name || !email || !password || !selectedFile) {
+    alert("Please fill out all fields and upload an image.");
+    return;
+  }
 
-    try {
-      const res=await fetch(`${BASE_URL}/api/v1/auth/register`,{
-        method:'POST',
-        headers:{
-          'Content-Type':'application/json',
+  setIsSubmitting(true); 
+
+  try {
+    const res = await fetch(`${BASE_URL}/api/v1/auth/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+        role,
+        gender,
+        image: selectedFile,
+        contact: {
+          phone: contact,
+          address: address,
         },
-        body:JSON.stringify({
-          name,
-          email,
-          password,
-          role,
-          gender,
-          image: selectedFile,
-          contact: {
-            phone: contact,   // Ensure phone is defined
-            address: address,  // Ensure address is defined
-          },
+      }),
+    });
 
+    const data = await res.json();
+    console.log(data);
 
-        }),
-
-
-      });
-      const data=await res.json();
-      console.log(data);
-      if (res.ok) {
-        alert("Otp sent on Email ");
-      nevigate("/otpverification/"+email); 
-      } else {
-        alert(data.message || "Registration failed.");
-      }
-    } catch (error) {
-      
+    if (res.ok) {
+      alert("OTP sent on Email");
+      nevigate("/otpverification/" + email);
+    } else {
+      alert(data.message || "Registration failed.");
     }
-  };
+  } catch (error) {
+    console.error("Register error:", error);
+    alert("Something went wrong. Please try again.");
+  } finally {
+    setIsSubmitting(false); 
+  }
+};
 
 
   const handleImageChange = async (e) => {
-    const file = e.target.files[0];
-  
-    if (file) {
-      setImage(file);
-      console.log("Uploading image...");
-  
-      try {
-        const uploadedImageUrl = await uplodecloudnery(file);
-        console.log("Image uploaded:", uploadedImageUrl);
-  
-        if (!uploadedImageUrl) {
-          alert("Image upload failed. Try again.");
-          return;
-        }
-  
-        setSelectedFile(uploadedImageUrl);
-        setFormData((prev) => ({ ...prev, image: uploadedImageUrl }));
-      } catch (err) {
-        console.error("Image upload error:", err);
-        alert("Image upload failed.");
+  const file = e.target.files[0];
+
+  if (file) {
+    setImage(file);
+    setIsUploading(true); 
+
+    try {
+      const uploadedImageUrl = await uplodecloudnery(file);
+
+      if (!uploadedImageUrl) {
+        alert("Image upload failed. Try again.");
+        return;
       }
+
+      setSelectedFile(uploadedImageUrl);
+      setFormData((prev) => ({ ...prev, image: uploadedImageUrl }));
+    } catch (err) {
+      console.error("Image upload error:", err);
+      alert("Image upload failed.");
+    } finally {
+      setIsUploading(false);
     }
-  };
+  }
+};
+
   const loginpage=()=>{
     nevigate("/login")
     console.log(formData)
@@ -102,6 +108,24 @@ const Register = ({ onSwitchToLogin }) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-indigo-50 flex items-center justify-center p-4">
+      {isSubmitting && (
+  <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div className="h-16 w-16 animate-spin rounded-full border-4 border-white border-t-green-500"></div>
+    <p className="mt-4 text-white text-lg font-semibold">
+      Please wait...
+    </p>
+  </div>
+)}
+
+      {isUploading && (
+  <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div className="h-16 w-16 animate-spin rounded-full border-4 border-white border-t-indigo-500"></div>
+    <p className="mt-4 text-white text-lg font-medium">
+      Uploading image...
+    </p>
+  </div>
+)}
+
       <div className="w-full max-w-2xl bg-white rounded-2xl shadow-xl overflow-hidden">
         <div className="flex flex-col md:flex-row">
           {/* Left Side - Decorative Gradient */}
@@ -262,8 +286,10 @@ const Register = ({ onSwitchToLogin }) => {
               {/* Submit Button */}
               <button
                 type="submit"
+                  disabled={isSubmitting}
                 className="w-full py-3 px-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all"
               >
+                  
                 Register Now
               </button>
             </form>

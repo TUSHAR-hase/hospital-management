@@ -66,10 +66,10 @@ const Headers = () => {
         try {
             const token = localStorage.getItem("token");
             const userid = localStorage.getItem("userid");
-            if (!token) {
-                router("/login");
-                return;
-            }
+            // if (!token) {
+            //     navigate("/login");
+            //     return;
+            // }
             const res = await fetch(`${BASE_URL}/api/v1/users/singleuser/${userid}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
